@@ -58,7 +58,7 @@ class NextDateTests(unittest.TestCase):
         self.assertNotEqual(repr(monday), repr(tuesday))
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    #@unittest.expectedFailure
     def test_after_today(self):
         self.set_date(2019, 9, 3)  # Tuesday
         self.assertEqual(NextDate(Weekday.TUESDAY).days_until(), 0)
