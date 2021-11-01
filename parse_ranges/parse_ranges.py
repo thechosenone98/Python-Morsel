@@ -8,17 +8,11 @@ def parse_ranges(s: str) -> List[int]:
     s = s.translate(str.maketrans("", "", " "))
     for num_range in s.split(','):
         # Start by checking if there is an arrow in the range
-        num, found, discard = num_range.partition('->')
-        if found:
-            yield int(num)
+        start, found, end = num_range.partition('-')
+        if not found or end.startswith('>'):
+            yield int(start)
         else:
-            low, found, high = num_range.partition('-')
-            if found:
-                low, high = map(int, [low, high])
-                for n in range(low, high + 1):
-                    yield n
-            else:
-                yield int(num_range)
+            yield from range(int(start), int(end) + 1)
 
 if __name__ == '__main__':
     print(list(parse_ranges("1-2,4-4,5,8-10")))
