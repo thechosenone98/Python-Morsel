@@ -20,7 +20,7 @@ class ParseRangesTests(unittest.TestCase):
         )
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    #@unittest.expectedFailure
     def test_return_iterator(self):
         numbers = parse_ranges('0-0, 4-8, 20-21, 43-45')
         self.assertEqual(next(numbers), 0)
@@ -30,7 +30,7 @@ class ParseRangesTests(unittest.TestCase):
         self.assertEqual(next(numbers), 100)
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    #@unittest.expectedFailure
     def test_with_individual_numbers(self):
         self.assertEqual(
             list(parse_ranges('0,4-8,20,43-45')),
@@ -38,7 +38,7 @@ class ParseRangesTests(unittest.TestCase):
         )
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    #@unittest.expectedFailure
     def test_ignore_arrows(self):
         self.assertEqual(
             list(parse_ranges('0, 4-8, 20->exit, 43-45')),
