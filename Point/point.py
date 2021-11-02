@@ -4,9 +4,9 @@ from itertools import repeat
 
 @dataclass
 class Point(object):
-    x: int
-    y: int
-    z: int
+    x: float
+    y: float
+    z: float
     def __add__(self, other):
         return Point(*map(add, self, other))
     def __sub__(self, other):
