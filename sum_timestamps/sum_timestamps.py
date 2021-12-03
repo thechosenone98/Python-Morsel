@@ -22,11 +22,6 @@ def sum_timestamps(timestamps):
         return f"{total[1]:01d}:{total[2]:02d}:{total[3]:02d}"
     else:
         return f"{total[2]:01d}:{total[3]:02d}"
-    # field_out_map['days'] = str(total[0])
-    # field_out_map['hours'] = '0' + str(total[1]) if total[0] != 0 and len(str(total[1])) < 2 else str(total[1])
-    # field_out_map['minutes'] = '0' + str(total[2]) if total[1] != 0 and len(str(total[2])) < 2 else str(total[2])
-    # field_out_map['seconds'] = '0' + str(total[3]) if len(str(total[3])) < 2 else str(total[3])
-    # return ':'.join(field for key, field in field_out_map.items() if field != '0' or key == 'minutes')
 
 if __name__ == "__main__":
     print(sum_timestamps(['1:02:01', '40:01:05', '10:57:30']))
